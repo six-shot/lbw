@@ -61,7 +61,7 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ quote, name, role }: Testimonial) => (
-  <article className=" w-[352px] rounded-[24px] border border-surface/10 bg-fog/5 p-6 backdrop-blur-sm">
+  <article className="w-[300px] rounded-[24px] border border-surface/10 bg-fog/5 p-5 backdrop-blur-sm sm:w-[352px] sm:p-6">
     <p className="text-sm leading-6 text-surface/70">"{quote}"</p>
     <h4 className="mt-5 text-xl  text-silver font-midnight">{name}</h4>
     <p className="mt-2 text-sm  text-surface/65">{role}</p>
@@ -70,9 +70,9 @@ const TestimonialCard = ({ quote, name, role }: Testimonial) => (
 
 const Community = () => {
   return (
-    <section className="overflow-x-hidden pt-[144px]">
+    <section className="overflow-x-hidden pt-20 sm:pt-24 lg:pt-[144px]">
       <div className="mb-12 overflow-x-hidden">
-        <h2 className="mb-8 text-center text-[48px] leading-[40px] text-white font-midnight">
+        <h2 className="mb-6 px-4 text-center font-midnight text-[34px] leading-[32px] text-white sm:mb-8 sm:text-[48px] sm:leading-[40px]">
           Hear from the community...
         </h2>
 

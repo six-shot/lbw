@@ -71,34 +71,34 @@ const EventRundown = () => {
   const [openPhase, setOpenPhase] = useState<"phase1" | "phase2">("phase1");
 
   const togglePhase = (phase: "phase1" | "phase2") => {
-    if (phase === "phase2" && openPhase === "phase2") {
-      setOpenPhase("phase1");
+    if (openPhase === phase) {
+      setOpenPhase(phase === "phase1" ? "phase2" : "phase1");
       return;
     }
     setOpenPhase(phase);
   };
 
   return (
-    <section className="py-[100px]">
-      <div className="relative mx-auto w-full max-w-[1440px] overflow-hidden rounded-[18px]  px-8 py-12 lg:px-14">
-        <div className="relative z-10 mx-auto max-w-[980px]">
+    <section className="pb-20 pt-20 sm:pt-24 lg:pb-[282px] lg:pt-[176px]">
+      <div className="relative mx-auto w-full max-w-[1440px] overflow-hidden rounded-[18px] px-4 sm:px-6 lg:px-14">
+        <div className="relative z-10 mx-auto max-w-[1168px]">
           <div className="text-center">
-            <h2 className="text-[58px] leading-[64px] text-surface">
+            <h2 className="font-midnight text-[38px] leading-[36px] text-white sm:text-[52px] sm:leading-[46px] lg:text-[64px] lg:leading-[48px]">
               The Intelligent Economy
             </h2>
-            <p className="mt-3 text-[16px] uppercase tracking-[1.8px] text-surface/65">
+            <p className="mt-3 text-xs text-surface sm:mt-4 sm:text-[15px]">
               Powering Nigeria&apos;s Next Wave of Innovation Across Industries
             </p>
           </div>
 
-          <div className="group mt-10 rounded-2xl border border-surface/10 bg-primary/35 px-4 py-4">
+          <div className="group mt-10">
             <button
               type="button"
               onClick={() => togglePhase("phase1")}
               className="flex w-full cursor-pointer items-center justify-between text-left"
             >
               <div>
-                <p className="text-base font-semibold uppercase tracking-[2.6px] text-tertiary">
+                <p className="text-sm font-semibold uppercase tracking-[1.6px] text-tertiary sm:text-base sm:tracking-[2.6px]">
                   Phase 1 — The Build & Workshop
                 </p>
                 <p className="mt-1 text-sm text-surface/70">Mon 13 Jul - Fri 17 Jul</p>
@@ -115,7 +115,7 @@ const EventRundown = () => {
                 {PHASE_ONE_DAYS.map((event) => (
                   <article
                     key={event.day}
-                    className="grid grid-cols-[180px_1fr] items-start gap-5 rounded-2xl border border-surface/10 bg-primary/50 px-5 py-4"
+                    className="grid grid-cols-1 items-start gap-3 rounded-2xl border border-surface/10 bg-primary/50 px-4 py-4 sm:grid-cols-[180px_1fr] sm:gap-5 sm:px-5"
                   >
                     <div>
                       <p className="text-[18px] font-semibold leading-[22px] text-tertiary">
@@ -127,7 +127,7 @@ const EventRundown = () => {
                       <span className="inline-flex rounded-full bg-fog/70 px-2 py-1 text-xs text-surface/80">
                         {event.tag}
                       </span>
-                      <h3 className="mt-2 text-[22px] leading-[28px] text-surface">
+                      <h3 className="mt-2 text-lg leading-6 text-surface sm:text-[22px] sm:leading-[28px]">
                         {event.title}
                       </h3>
                       <p className="mt-1 text-[16px] leading-[22px] text-surface/65">
@@ -147,7 +147,7 @@ const EventRundown = () => {
               className="flex w-full cursor-pointer items-center justify-between text-left"
             >
               <div>
-                <p className="text-base font-semibold uppercase tracking-[2.6px] text-tertiary">
+                <p className="text-sm font-semibold uppercase tracking-[1.6px] text-tertiary sm:text-base sm:tracking-[2.6px]">
                   Phase 2 — Conference & Expo, Mixer & Awards Night
                 </p>
                 <p className="mt-1 text-sm text-surface/70">Sat 18 Jul - Sun 19 Jul</p>
@@ -163,7 +163,7 @@ const EventRundown = () => {
                 {PHASE_TWO_DAYS.map((event) => (
                   <article
                     key={event.day}
-                    className="grid grid-cols-[180px_1fr] items-start gap-5 rounded-2xl border border-surface/10 bg-primary/50 px-5 py-4"
+                    className="grid grid-cols-1 items-start gap-3 rounded-2xl border border-surface/10 bg-primary/50 px-4 py-4 sm:grid-cols-[180px_1fr] sm:gap-5 sm:px-5"
                   >
                     <div>
                       <p className="text-[18px] font-semibold leading-[22px] text-tertiary">
@@ -175,7 +175,7 @@ const EventRundown = () => {
                       <span className="inline-flex rounded-full bg-fog/70 px-2 py-1 text-xs text-surface/80">
                         {event.tag}
                       </span>
-                      <h3 className="mt-2 text-[22px] leading-[28px] text-surface">
+                      <h3 className="mt-2 text-lg leading-6 text-surface sm:text-[22px] sm:leading-[28px]">
                         {event.title}
                       </h3>
                       <p className="mt-1 text-[16px] leading-[22px] text-surface/65">

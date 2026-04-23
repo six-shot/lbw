@@ -16,74 +16,74 @@ const GALLERY_IMAGES = [
 const GALLERY_ITEMS = [
   {
     className:
-      "col-span-4 col-start-1 row-start-1 h-[210px] rounded-[24px]",
+      "lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:h-[210px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[0],
   },
   {
     className:
-      "col-span-3 col-start-5 row-start-1 h-[210px] rounded-[24px]",
+      "lg:col-span-3 lg:col-start-5 lg:row-start-1 lg:h-[210px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[1],
   },
   {
     className:
-      "col-span-3 col-start-8 row-start-1 h-[210px] rounded-[24px]",
+      "lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:h-[210px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[2],
   },
   {
     className:
-      "col-span-2 col-start-11 row-span-2 row-start-1 h-[436px] rounded-[24px]",
+      "lg:col-span-2 lg:col-start-11 lg:row-span-2 lg:row-start-1 lg:h-[436px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[3],
   },
   {
     className:
-      "col-span-2 col-start-1 row-start-2 h-[210px] rounded-[24px]",
+      "lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:h-[210px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[4],
   },
   {
     className:
-      "col-span-3 col-start-3 row-span-2 row-start-2 h-[436px] rounded-[24px]",
+      "lg:col-span-3 lg:col-start-3 lg:row-span-2 lg:row-start-2 lg:h-[436px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[5],
   },
   {
     className:
-      "col-span-3 col-start-6 row-span-2 row-start-2 h-[436px] rounded-[24px]",
+      "lg:col-span-3 lg:col-start-6 lg:row-span-2 lg:row-start-2 lg:h-[436px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[6],
   },
   {
     className:
-      "col-span-2 col-start-9 row-span-2 row-start-2 h-[436px] rounded-[24px]",
+      "lg:col-span-2 lg:col-start-9 lg:row-span-2 lg:row-start-2 lg:h-[436px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[7],
   },
   {
     className:
-      "col-span-2 col-start-1 row-start-3 h-[210px] rounded-[24px]",
+      "lg:col-span-2 lg:col-start-1 lg:row-start-3 lg:h-[210px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[8],
   },
   {
     className:
-      "col-span-2 col-start-11 row-start-3 h-[210px] rounded-[24px]",
+      "lg:col-span-2 lg:col-start-11 lg:row-start-3 lg:h-[210px] lg:rounded-[24px]",
     src: GALLERY_IMAGES[1],
   },
 ];
 
 const AtAGlance = () => {
   return (
-    <section className="py-[144px]">
-      <div className="mx-auto w-full max-w-[1440px] px-6">
-        <div className="text-center mb-[42px]">
+    <section className="py-20 sm:py-24 lg:py-[144px]">
+      <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6">
+        <div className="mb-8 text-center sm:mb-[42px]">
           <p className="text-sm font-medium uppercase tracking-[2.8px] text-white">
             SEE WHAT PREVIOUS EVENTS LOOKED LIKE (IN PICTURES)
           </p>
-          <h2 className="mt-4 text-[64px] leading-[48px] text-surface font-midnight font-medium">
+          <h2 className="mt-4 font-midnight text-[34px] leading-[32px] text-surface font-medium sm:text-[48px] sm:leading-[42px] lg:text-[64px] lg:leading-[48px]">
             Lagos Blockchain Week at a glance...
           </h2>
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-[1440px] grid-cols-12 gap-4">
+        <div className="mx-auto mt-8 grid max-w-[1440px] grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-12">
           {GALLERY_ITEMS.map((item, index) => (
             <article
               key={`gallery-tile-${index}`}
-              className={`relative overflow-hidden border border-surface/10 ${item.className}`}
+              className={`relative col-span-1 h-[160px] overflow-hidden rounded-[16px] border border-surface/10 sm:h-[210px] sm:rounded-[24px] lg:h-auto lg:rounded-none ${item.className}`}
             >
               <Image
                 src={item.src}
