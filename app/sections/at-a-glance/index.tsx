@@ -13,55 +13,45 @@ const GALLERY_IMAGES = [
   "/gallery/12f11fb907eba203dd70e6c462ae26485c0b096f.jpg",
 ];
 
-const GALLERY_ITEMS = [
+const DESKTOP_GALLERY_ITEMS = [
   {
-    className:
-      "lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:h-[210px] lg:rounded-[24px]",
+    className: "col-span-4 col-start-1 row-start-1 h-[210px] rounded-[24px]",
     src: GALLERY_IMAGES[0],
   },
   {
-    className:
-      "lg:col-span-3 lg:col-start-5 lg:row-start-1 lg:h-[210px] lg:rounded-[24px]",
+    className: "col-span-3 col-start-5 row-start-1 h-[210px] rounded-[24px]",
     src: GALLERY_IMAGES[1],
   },
   {
-    className:
-      "lg:col-span-3 lg:col-start-8 lg:row-start-1 lg:h-[210px] lg:rounded-[24px]",
+    className: "col-span-3 col-start-8 row-start-1 h-[210px] rounded-[24px]",
     src: GALLERY_IMAGES[2],
   },
   {
-    className:
-      "lg:col-span-2 lg:col-start-11 lg:row-span-2 lg:row-start-1 lg:h-[436px] lg:rounded-[24px]",
+    className: "col-span-2 col-start-11 row-span-2 row-start-1 h-[436px] rounded-[24px]",
     src: GALLERY_IMAGES[3],
   },
   {
-    className:
-      "lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:h-[210px] lg:rounded-[24px]",
+    className: "col-span-2 col-start-1 row-start-2 h-[210px] rounded-[24px]",
     src: GALLERY_IMAGES[4],
   },
   {
-    className:
-      "lg:col-span-3 lg:col-start-3 lg:row-span-2 lg:row-start-2 lg:h-[436px] lg:rounded-[24px]",
+    className: "col-span-3 col-start-3 row-span-2 row-start-2 h-[436px] rounded-[24px]",
     src: GALLERY_IMAGES[5],
   },
   {
-    className:
-      "lg:col-span-3 lg:col-start-6 lg:row-span-2 lg:row-start-2 lg:h-[436px] lg:rounded-[24px]",
+    className: "col-span-3 col-start-6 row-span-2 row-start-2 h-[436px] rounded-[24px]",
     src: GALLERY_IMAGES[6],
   },
   {
-    className:
-      "lg:col-span-2 lg:col-start-9 lg:row-span-2 lg:row-start-2 lg:h-[436px] lg:rounded-[24px]",
+    className: "col-span-2 col-start-9 row-span-2 row-start-2 h-[436px] rounded-[24px]",
     src: GALLERY_IMAGES[7],
   },
   {
-    className:
-      "lg:col-span-2 lg:col-start-1 lg:row-start-3 lg:h-[210px] lg:rounded-[24px]",
+    className: "col-span-2 col-start-1 row-start-3 h-[210px] rounded-[24px]",
     src: GALLERY_IMAGES[8],
   },
   {
-    className:
-      "lg:col-span-2 lg:col-start-11 lg:row-start-3 lg:h-[210px] lg:rounded-[24px]",
+    className: "col-span-2 col-start-11 row-start-3 h-[210px] rounded-[24px]",
     src: GALLERY_IMAGES[1],
   },
 ];
@@ -79,11 +69,27 @@ const AtAGlance = () => {
           </h2>
         </div>
 
-        <div className="mx-auto mt-8 grid max-w-[1440px] grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-12">
-          {GALLERY_ITEMS.map((item, index) => (
+        <div className="mx-auto mt-8 grid max-w-[1440px] grid-cols-2 gap-3 sm:gap-4 lg:hidden">
+          {DESKTOP_GALLERY_ITEMS.map((item, index) => (
             <article
-              key={`gallery-tile-${index}`}
-              className={`relative col-span-1 h-[160px] overflow-hidden rounded-[16px] border border-surface/10 sm:h-[210px] sm:rounded-[24px] lg:h-auto lg:rounded-none ${item.className}`}
+              key={`gallery-mobile-tile-${index}`}
+              className="relative col-span-1 h-[160px] overflow-hidden rounded-[16px] border border-surface/10 sm:h-[210px] sm:rounded-[24px]"
+            >
+              <Image
+                src={item.src}
+                alt="LBW gallery moment"
+                fill
+                className="object-cover object-center"
+              />
+            </article>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-8 hidden max-w-[1440px] grid-cols-12 gap-4 lg:grid">
+          {DESKTOP_GALLERY_ITEMS.map((item, index) => (
+            <article
+              key={`gallery-desktop-tile-${index}`}
+              className={`relative overflow-hidden border border-surface/10 ${item.className}`}
             >
               <Image
                 src={item.src}
