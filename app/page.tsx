@@ -15,9 +15,11 @@ export default function Home() {
     <div>
       <Hero />
       <Metric />
+      <PastLbw />
       <EventRundown />
-      {/* <PastLbw /> */}
-      {/* <WhyAttend />
+      {/* <WhyAttend /> */}
+      {/**/}
+      {/* 
       <Partners /> */}
       <PastSpeakers />
       <Community />
