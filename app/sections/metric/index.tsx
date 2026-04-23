@@ -28,26 +28,26 @@ const Metric = () => {
               key={card.label}
               className="flex h-[128px] w-[280px] flex-col items-center justify-center rounded-[8px] border border-surface/15 bg-fog/5 backdrop-blur-[2px]"
             >
-              <p className="text-[46px] leading-[50px] text-surface">{card.value}</p>
-              <p className="mt-1 text-[27px] leading-[31px] text-surface/85">
-                {card.label}
+              <p className="text-[48px] font-midnight leading-[46px] text-white">
+                {card.value}
               </p>
+              <p className="  text-white">{card.label}</p>
             </div>
           ))}
         </div>
 
-        {/* <div className="mt-5 flex items-center gap-7 text-surface/65">
+        <div className="mt-6 flex items-center gap-6 ">
           {SUPPORTING_STATS.map((item, idx) => (
             <div key={item} className="flex items-center gap-2">
               {idx === 0 && <span className="text-[#39B5E8]">x</span>}
-              <span className="text-[22px] leading-[26px]">{item}</span>
+              <span className="text-white/70 leading-6">{item}</span>
             </div>
           ))}
         </div>
 
-        <button className="mt-6 text-[22px] font-medium leading-[26px] text-tertiary">
+        <button className=" mt-6 font-medium  text-tertiary leading-6">
           See 2025 Recap <span aria-hidden>→</span>
-        </button> */}
+        </button>
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ const PastSpeakers = () => {
             ‹
           </button> */}
 
-          <div className="mt-0 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-[47px] lg:flex">
+          <div className="mt-0 grid w-full grid-cols-1 justify-center gap-4 sm:grid-cols-2 lg:mt-[47px] lg:flex">
             <Image
               src="/speaker-1.svg"
               alt="Speaker 1"
