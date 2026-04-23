@@ -61,7 +61,7 @@ const WhyAttend = () => {
           </h2>
         </div>
 
-        <div className="mt-8 grid grid-cols-[320px_1fr_320px] items-center gap-8">
+        <div className="mt-8 grid grid-cols-[320px_1fr_320px] items-center gap-8 h-[538px]">
           <div className="flex flex-col gap-8">
             {LEFT_BENEFITS.map((item) => (
               <BenefitBlock key={item.title} {...item} />

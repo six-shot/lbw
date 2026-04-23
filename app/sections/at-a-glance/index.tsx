@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BlurImage from "@/app/components/miscellaneous/blur-image";
 import React from "react";
 
 const GALLERY_IMAGES = [
@@ -75,7 +75,7 @@ const AtAGlance = () => {
               key={`gallery-mobile-tile-${index}`}
               className="relative col-span-1 h-[160px] overflow-hidden rounded-[16px] border border-surface/10 sm:h-[210px] sm:rounded-[24px]"
             >
-              <Image
+              <BlurImage
                 src={item.src}
                 alt="LBW gallery moment"
                 fill
@@ -91,7 +91,7 @@ const AtAGlance = () => {
               key={`gallery-desktop-tile-${index}`}
               className={`relative overflow-hidden border border-surface/10 ${item.className}`}
             >
-              <Image
+              <BlurImage
                 src={item.src}
                 alt="LBW gallery moment"
                 fill

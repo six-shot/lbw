@@ -1,5 +1,5 @@
 import { Button } from "@/app/components/ui/button";
-import Image from "next/image";
+import BlurImage from "@/app/components/miscellaneous/blur-image";
 import React from "react";
 
 const SPEAKERS = [
@@ -32,21 +32,21 @@ const PastSpeakers = () => {
           </button> */}
 
           <div className="mt-0 grid w-full grid-cols-1 justify-center gap-4 sm:grid-cols-2 lg:mt-[47px] lg:flex">
-            <Image
+            <BlurImage
               src="/speaker-1.svg"
               alt="Speaker 1"
               width={370}
               height={326}
               className="h-auto w-full lg:w-[370px]"
             />
-            <Image
+            <BlurImage
               src="/speaker-1.svg"
               alt="Speaker 1"
               width={370}
               height={326}
               className="h-auto w-full lg:w-[370px]"
             />
-            <Image
+            <BlurImage
               src="/speaker-1.svg"
               alt="Speaker 1"
               width={370}

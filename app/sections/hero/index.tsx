@@ -1,10 +1,66 @@
+"use client";
+
 import Navbar from "@/app/components/layout/navbar";
 import { Button } from "@/app/components/ui/button";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+const HERO_IMAGES = ["/hero.jpg", "/hero.png"];
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToSlide = (index: number) => setCurrentSlide(index);
+  const goPrev = () =>
+    setCurrentSlide((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
+  const goNext = () => setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
+
   return (
-    <div className="flex min-h-[760px] flex-col bg-[url('/hero.jpg')] bg-cover bg-center bg-no-repeat lg:min-h-[860px] xl:min-h-[900px] 2xl:h-[950px]">
+    <div className="relative flex min-h-[760px] flex-col overflow-hidden lg:min-h-[860px] xl:min-h-[900px] 2xl:h-[950px]">
+      {HERO_IMAGES.map((image, index) => (
+        <div
+          key={image}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700 ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
+          style={{ backgroundImage: `url(${image})` }}
+        />
+      ))}
+
+      <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2 sm:bottom-6 sm:right-6">
+        <button
+          type="button"
+          onClick={goPrev}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm"
+          aria-label="Previous hero image"
+        >
+          ‹
+        </button>
+        {HERO_IMAGES.map((_, index) => (
+          <button
+            key={`hero-dot-${index}`}
+            type="button"
+            onClick={() => goToSlide(index)}
+            className={`h-2.5 w-2.5 rounded-full transition-all ${currentSlide === index ? "bg-tertiary" : "bg-white/55"}`}
+            aria-label={`Go to hero image ${index + 1}`}
+          />
+        ))}
+        <button
+          type="button"
+          onClick={goNext}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-sm"
+          aria-label="Next hero image"
+        >
+          ›
+        </button>
+      </div>
+
+      <div className="relative z-10">
       <Navbar />
       <div className="mt-6 px-4 sm:px-6 md:mt-10 lg:mt-[70px] lg:px-10 xl:px-[56px] 2xl:mt-[88px]">
         <div className="mx-auto flex w-full max-w-[1440px]">
@@ -30,6 +86,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

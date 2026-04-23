@@ -22,30 +22,30 @@ const Metric = () => {
           </h2>
         </div>
 
-        <div className="mt-6 flex items-center gap-6">
+        <div className="mt-6 grid w-full max-w-[900px] grid-cols-1 gap-4 sm:grid-cols-2 lg:flex lg:items-center lg:justify-center lg:gap-6">
           {METRIC_CARDS.map((card) => (
             <div
               key={card.label}
-              className="flex h-[128px] w-[280px] flex-col items-center justify-center rounded-[8px] border border-surface/15 bg-fog/5 backdrop-blur-[2px]"
+              className="flex h-[118px] w-full flex-col items-center justify-center rounded-[8px] border border-surface/15 bg-fog/5 px-3 text-center backdrop-blur-[2px] sm:h-[128px] lg:w-[280px]"
             >
-              <p className="text-[48px] font-midnight leading-[46px] text-white">
+              <p className="font-midnight text-[40px] leading-[40px] text-white sm:text-[48px] sm:leading-[46px]">
                 {card.value}
               </p>
-              <p className="  text-white">{card.label}</p>
+              <p className="text-sm text-white sm:text-base">{card.label}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 flex items-center gap-6 ">
+        <div className="mt-6 flex flex-col items-center gap-2 text-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6">
           {SUPPORTING_STATS.map((item, idx) => (
             <div key={item} className="flex items-center gap-2">
               {idx === 0 && <span className="text-[#39B5E8]">x</span>}
-              <span className="text-white/70 leading-6">{item}</span>
+              <span className="leading-6 text-white/70">{item}</span>
             </div>
           ))}
         </div>
 
-        <button className=" mt-6 font-medium  text-tertiary leading-6">
+        <button className="mt-6 text-sm font-medium leading-6 text-tertiary sm:text-base">
           See 2025 Recap <span aria-hidden>→</span>
         </button>
       </div>
