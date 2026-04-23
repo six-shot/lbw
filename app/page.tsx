@@ -2,6 +2,7 @@ import AtAGlance from "./sections/at-a-glance";
 import AnnualReport from "./sections/annual-report";
 import Cta from "./sections/cta";
 import Community from "./sections/community";
+import EventRundown from "./sections/event-rundown";
 import Hero from "./sections/hero";
 import Metric from "./sections/metric";
 import PastLbw from "./sections/past-lbw";
@@ -14,11 +15,12 @@ export default function Home() {
     <div>
       <Hero />
       <Metric />
+      <EventRundown />
       {/* <PastLbw /> */}
       {/* <WhyAttend />
       <Partners /> */}
       <PastSpeakers />
-      {/* <Community /> */}
+      <Community />
 
       <AtAGlance />
       <AnnualReport />

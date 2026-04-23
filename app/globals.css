@@ -10,6 +10,7 @@
   --ivory: #f7fcfa;
   --mint: #e7ffe1;
   --fog: #344636;
+  --silver: #c3c3c3;
 
   --background: var(--surface);
   --foreground: var(--primary);
@@ -26,6 +27,7 @@
   --color-ivory: var(--ivory);
   --color-mint: var(--mint);
   --color-fog: var(--fog);
+  --color-silver: var(--silver);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-family-roboto), ui-sans-serif, system-ui, sans-serif;

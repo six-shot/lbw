@@ -61,10 +61,10 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ quote, name, role }: Testimonial) => (
-  <article className="h-[204px] w-[330px] rounded-2xl border border-surface/10 bg-primary/65 p-5 backdrop-blur-sm">
-    <p className="text-[16px] leading-[24px] text-surface/70">"{quote}"</p>
-    <h4 className="mt-4 text-[24px] leading-[28px] text-surface">{name}</h4>
-    <p className="mt-1 text-[18px] leading-[22px] text-surface/65">{role}</p>
+  <article className=" w-[352px] rounded-[24px] border border-surface/10 bg-fog/5 p-6 backdrop-blur-sm">
+    <p className="text-sm leading-6 text-surface/70">"{quote}"</p>
+    <h4 className="mt-5 text-xl  text-silver font-midnight">{name}</h4>
+    <p className="mt-2 text-sm  text-surface/65">{role}</p>
   </article>
 );
 
@@ -89,7 +89,7 @@ const Community = () => {
           speed={35}
           direction="right"
           pauseOnHover
-          className="mt-4 overflow-x-hidden py-2"
+          className="mt-6 overflow-x-hidden py-2"
         >
           <div className="flex gap-4 pr-4">
             {TESTIMONIALS.map((testimonial) => (

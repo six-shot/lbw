@@ -1,4 +1,70 @@
+import Image from "next/image";
 import React from "react";
+
+const GALLERY_IMAGES = [
+  "/gallery/image-2.jpg",
+  "/gallery/image-1.jpg",
+  "/gallery/image-3.jpg",
+  "/gallery/image-4.jpg",
+  "/gallery/image-5.jpg",
+  "/gallery/image-6.jpg",
+  "/gallery/image-7.jpg",
+  "/gallery/image7.jpg",
+  "/gallery/12f11fb907eba203dd70e6c462ae26485c0b096f.jpg",
+];
+
+const GALLERY_ITEMS = [
+  {
+    className:
+      "col-span-4 col-start-1 row-start-1 h-[210px] rounded-[24px]",
+    src: GALLERY_IMAGES[0],
+  },
+  {
+    className:
+      "col-span-3 col-start-5 row-start-1 h-[210px] rounded-[24px]",
+    src: GALLERY_IMAGES[1],
+  },
+  {
+    className:
+      "col-span-3 col-start-8 row-start-1 h-[210px] rounded-[24px]",
+    src: GALLERY_IMAGES[2],
+  },
+  {
+    className:
+      "col-span-2 col-start-11 row-span-2 row-start-1 h-[436px] rounded-[24px]",
+    src: GALLERY_IMAGES[3],
+  },
+  {
+    className:
+      "col-span-2 col-start-1 row-start-2 h-[210px] rounded-[24px]",
+    src: GALLERY_IMAGES[4],
+  },
+  {
+    className:
+      "col-span-3 col-start-3 row-span-2 row-start-2 h-[436px] rounded-[24px]",
+    src: GALLERY_IMAGES[5],
+  },
+  {
+    className:
+      "col-span-3 col-start-6 row-span-2 row-start-2 h-[436px] rounded-[24px]",
+    src: GALLERY_IMAGES[6],
+  },
+  {
+    className:
+      "col-span-2 col-start-9 row-span-2 row-start-2 h-[436px] rounded-[24px]",
+    src: GALLERY_IMAGES[7],
+  },
+  {
+    className:
+      "col-span-2 col-start-1 row-start-3 h-[210px] rounded-[24px]",
+    src: GALLERY_IMAGES[8],
+  },
+  {
+    className:
+      "col-span-2 col-start-11 row-start-3 h-[210px] rounded-[24px]",
+    src: GALLERY_IMAGES[1],
+  },
+];
 
 const AtAGlance = () => {
   return (
@@ -14,18 +80,19 @@ const AtAGlance = () => {
         </div>
 
         <div className="mx-auto mt-8 grid max-w-[1440px] grid-cols-12 gap-4">
-          <article className="col-span-4 col-start-1 row-start-1 h-[200px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#394a45_0%,#14231d_100%)]" />
-          <article className="col-span-3 col-start-5 row-start-1 h-[200px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#4f4a3f_0%,#1d241f_100%)]" />
-          <article className="col-span-3 col-start-8 row-start-1 h-[200px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#5f5a4f_0%,#202620_100%)]" />
-          <article className="col-span-2 col-start-11 row-span-2 row-start-1 h-[413px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#5a4f45_0%,#1f211e_100%)]" />
-
-          <article className="col-span-2 col-start-1 row-start-2 h-[200px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#5d5a4f_0%,#20251f_100%)]" />
-          <article className="col-span-3 col-start-3 row-span-2 row-start-2 h-[413px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#5f6462_0%,#1d2622_100%)]" />
-          <article className="col-span-3 col-start-6 row-span-2 row-start-2 h-[413px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#4e5755_0%,#17211d_100%)]" />
-          <article className="col-span-2 col-start-9 row-span-2 row-start-2 h-[413px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#594f61_0%,#1f1c26_100%)]" />
-
-          <article className="col-span-2 col-start-1 row-start-3 h-[200px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#4b4742_0%,#1f201e_100%)]" />
-          <article className="col-span-2 col-start-11 row-start-3 h-[200px] rounded-3xl border border-surface/10 bg-[linear-gradient(145deg,#3f4744_0%,#18201d_100%)]" />
+          {GALLERY_ITEMS.map((item, index) => (
+            <article
+              key={`gallery-tile-${index}`}
+              className={`relative overflow-hidden border border-surface/10 ${item.className}`}
+            >
+              <Image
+                src={item.src}
+                alt="LBW gallery moment"
+                fill
+                className="object-cover object-center"
+              />
+            </article>
+          ))}
         </div>
       </div>
     </section>
