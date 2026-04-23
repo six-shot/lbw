@@ -1,0 +1,35 @@
+---
+description: Conventions for building the marketing landing page (layout, a11y, Next.js, Tailwind)
+globs: app/**/*.tsx,components/**/*.tsx
+alwaysApply: false
+---
+
+# Landing page
+
+Before using Next.js APIs or file conventions, read the relevant guide under `node_modules/next/dist/docs/` (this project’s Next.js differs from public docs).
+
+## Structure and composition
+
+- Prefer a single route entry (`app/page.tsx`) that composes **named sections** (Hero, Features, Social proof, Pricing teaser, FAQ, CTA, Footer) as separate components under `components/landing/` or similar—keep `page.tsx` thin.
+- Use **semantic HTML**: one `h1` per page, section headings `h2`–`h3`, `main`, `header`/`footer`, `nav` for primary links.
+- **Responsive first**: mobile layout and readable tap targets (`min-h` / padding on buttons and links); use Tailwind breakpoints consistently (`sm:`, `md:`, `lg:`).
+
+## Styling (Tailwind v4)
+
+- Use **Tailwind utilities** and project tokens from `app/globals.css` (`@theme inline`, CSS variables). Prefer `bg-background` / `text-foreground` where those exist instead of hard-coded hex unless defining design tokens.
+- Keep **dark mode** coherent with `prefers-color-scheme` and existing `dark:` classes where the rest of the page uses them.
+
+## Next.js and performance
+
+- Use `next/image` for photos and logos with explicit `width`/`height` (or `fill` with a sized parent) and meaningful `alt`. Use `priority` only above the fold.
+- Default to **Server Components**; add `"use client"` only for interactivity (menus, carousels, form state).
+- Set **`metadata`** (and Open Graph fields if needed) in `app/layout.tsx` or a route `layout.tsx`—titles and descriptions should match the landing’s real product name and value prop.
+
+## Accessibility and UX
+
+- Interactive elements must be **keyboard-focusable**; visible focus styles; external links use `rel="noopener noreferrer"` when `target="_blank"`.
+- Don’t rely on color alone for meaning; provide **clear CTAs** with verb-led labels.
+
+## Content
+
+- Copy should be **scannable**: short headings, bullets where appropriate, one primary CTA per section when possible.
