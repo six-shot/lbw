@@ -1,6 +1,6 @@
 "use client";
 
-import { CaretdownIcon, CaretRightIcon, ClockIcon, CodeIcon } from "@/app/components/ui/icon";
+import { CaretdownIcon, CaretRightIcon, ClockIcon, CodeIcon, Staricon } from "@/app/components/ui/icons";
 import React, { useState } from "react";
 
 type EventDay = {
@@ -156,7 +156,7 @@ const EventRundown = () => {
               className="flex h-[56px] w-full items-center justify-between border-b border-[#1F431330] text-left"
             >
               <div className="flex items-center gap-2 sm:gap-3">
-                <CodeIcon />
+                <Staricon />
                 <div>
                   <p className="text-sm uppercase tracking-[1px] text-white sm:text-base lg:text-lg">
                     Phase 2 — Conference & Expo, Mixer & Awards Night

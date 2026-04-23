@@ -22,11 +22,11 @@ const Metric = () => {
           </h2>
         </div>
 
-        {/* <div className="mt-6 flex items-center gap-6">
+        <div className="mt-6 flex items-center gap-6">
           {METRIC_CARDS.map((card) => (
             <div
               key={card.label}
-              className="flex h-[128px] w-[280px] flex-col items-center justify-center rounded-[8px] border border-surface/15 bg-fog backdrop-blur-[2px]"
+              className="flex h-[128px] w-[280px] flex-col items-center justify-center rounded-[8px] border border-surface/15 bg-fog/5 backdrop-blur-[2px]"
             >
               <p className="text-[46px] leading-[50px] text-surface">{card.value}</p>
               <p className="mt-1 text-[27px] leading-[31px] text-surface/85">
@@ -34,7 +34,7 @@ const Metric = () => {
               </p>
             </div>
           ))}
-        </div> */}
+        </div>
 
         {/* <div className="mt-5 flex items-center gap-7 text-surface/65">
           {SUPPORTING_STATS.map((item, idx) => (
