@@ -17,7 +17,7 @@ const Metric = () => {
           <h5 className="text-sm font-medium leading-5 tracking-[2.8px] uppercase text-surface">
             PREVIOUS YEARS WERE GREAT!
           </h5>
-          <h2 className="mt-1 text-[56px] leading-[68px] text-surface font-midnight">
+          <h2 className="mt-1 text-[56px] leading-[68px] text-surface font-">
             The Conference
           </h2>
         </div>

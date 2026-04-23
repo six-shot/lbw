@@ -13,12 +13,12 @@ const PastSpeakers = () => {
     <section className="relative bg-[linear-gradient(90deg,rgba(0,20,4,0.72)_0%,rgba(0,37,7,0.72)_100%)] py-[50px]">
       {" "}
       <div className="absolute inset-0 bg-[url('/icon/mask.svg')] bg-cover bg-center bg-no-repeat" />
-      <div className="relative mx-auto w-full max-w-[1440px] overflow-hidden rounded-[18px] px-14 py-10">
+      <div className="relative mx-auto w-full max-w-[1440px]  flex flex-col items-center justify-center overflow-hidden rounded-[18px] px-14 py-10">
         <div className="relative z-10 text-center">
           <p className="text-sm font-semibold uppercase tracking-[2.8px] text-surface/85">
             THE BEST OF THE BEST ACROSS INDUSTRIES
           </p>
-          <h2 className="mt-4 text-[64px] leading-[72px] text-surface">
+          <h2 className="mt-4 text-[64px] leading-[72px] text-surface font-medium">
             Prestigious Past Speakers
           </h2>
         </div>

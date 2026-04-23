@@ -8,7 +8,7 @@ const AtAGlance = () => {
           <p className="text-sm font-medium uppercase tracking-[2.8px] text-white">
             SEE WHAT PREVIOUS EVENTS LOOKED LIKE (IN PICTURES)
           </p>
-          <h2 className="mt-4 text-[64px] leading-[48px] text-surface font-midnight">
+          <h2 className="mt-4 text-[64px] leading-[48px] text-surface font-midnight font-medium">
             Lagos Blockchain Week at a glance...
           </h2>
         </div>

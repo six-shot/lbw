@@ -11,9 +11,12 @@ const AnnualReport = () => {
               <p className="text-sm font-medium uppercase tracking-[2.8px] text-tertiary">
                 Annual Report
               </p>
-              <h2 className=" text-[64px] leading-[72px] text-white font-midnight">LBW 2025 Report</h2>
+              <h2 className=" text-[64px] leading-[72px] text-white font-midnight font-medium">
+                LBW 2025 Report
+              </h2>
               <p className=" text-surface/80">
-                A full recap of Lagos Blockchain Week 2025 - highlights, numbers, and impact.
+                A full recap of Lagos Blockchain Week 2025 - highlights,
+                numbers, and impact.
               </p>
             </div>
 
